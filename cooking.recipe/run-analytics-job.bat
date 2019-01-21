@@ -1,0 +1,1 @@
+%SPARK_HOME%\bin\spark-submit2 --master local --class com.cooking.recipe.DataAnalysis  --jars ./spark-cassandra-connector_2.11-2.4.0.jar,./config-1.3.3.jar ./cooking.job/target/cooking.job-1.0-SNAPSHOT.jar 127.0.0.1
