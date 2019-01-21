@@ -101,7 +101,8 @@ object DataLoadStreaming {
 
     fileStreamDf.writeStream
       .foreachBatch { (batchDF: DataFrame, batchId: Long) =>
-        batchDF.select(col("recipe_id"),col("ingredient")).distinct()
+        batchDF.select(col("recipe_id"),col("ingredient"),
+                       col("active"), col("updated_date")).distinct()
           .write
           .cassandraFormat("recipe_ingredient", "cooking")
           .mode("append")

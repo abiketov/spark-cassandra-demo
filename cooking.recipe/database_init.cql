@@ -27,5 +27,7 @@ PRIMARY KEY (ingredient,recipe_id)
 CREATE TABLE cooking.recipe_ingredient ( 
 recipe_id int,
 ingredient text,
+active boolean, 
+updated_date timestamp,
 PRIMARY KEY (recipe_id, ingredient)     
 );

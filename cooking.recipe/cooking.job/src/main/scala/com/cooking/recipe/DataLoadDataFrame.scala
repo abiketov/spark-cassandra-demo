@@ -62,10 +62,10 @@ object DataLoadDataFrame {
       .rdd.saveToCassandra("cooking","ingredient_recipe",
       SomeColumns("ingredient","recipe_id","recipe_name"))
 
-    df.select(col("recipe_id"),col("ingredient")).distinct()
-      .distinct()
+    df.select(col("recipe_id"),col("ingredient"),
+             col("active"), col("updated_date")).distinct().orderBy(col("updated_date"))
       .rdd.saveToCassandra("cooking","recipe_ingredient",
-      SomeColumns("recipe_id","ingredient"))
+      SomeColumns("recipe_id","ingredient","active","updated_date"))
 
   }
 
