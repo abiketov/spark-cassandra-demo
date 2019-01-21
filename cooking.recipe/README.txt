@@ -13,8 +13,14 @@ mvn package
 
 Create keyspace and tables in Cassandra run script database_init.cql
 
+SPARK_HOME system variable must be set
+
+recipe_events.csv file contains generated records that where used for testing
+
 To run data load:
 run-load-job-dataframe.bat OR run-load-job-streamimg.bat 
+run-load-job-dataframe.bat - DataFrame version
+run-load-job-streamimg.bat - Streaming version
 
 To run analytics job:
 run-analytics-job.bat
